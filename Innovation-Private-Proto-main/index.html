@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>FloraScan</title>
+    <meta name="description" content="Scan a plant tag or search the Niah National Park register. Every published record is verified by a botanist." />
+
+    <!--
+      Photographs are served from this machine when the import has cached them,
+      and from iNaturalist when it has not. Warming the connection costs
+      nothing in the cached case and saves a DNS + TLS round trip in the other.
+    -->
+    <link rel="preconnect" href="https://inaturalist-open-data.s3.amazonaws.com" crossorigin />
+    <link rel="dns-prefetch" href="https://inaturalist-open-data.s3.amazonaws.com" />
+
+    <!-- Installable web app -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f2a1a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
+    <meta name="application-name" content="FloraScan" />
+
+    <!-- iOS has never supported the manifest properly; it needs these instead -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="FloraScan" />
+    <!--
+      iOS picks the home-screen icon by the `sizes` attribute, and a single
+      un-sized link is the usual reason a web app ends up showing a screenshot
+      of the page instead of its logo. Every file here is an opaque PNG: iOS
+      does not composite transparency, it fills it with black.
+      /apple-touch-icon.png and the -precomposed variant sit at the site root
+      because iOS probes those paths directly when no link tag suits.
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple-touch-icon-167.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22112%22%20fill%3D%22%23176039%22%2F%3E%3Cg%20stroke%3D%22%23a8e06a%22%20stroke-width%3D%2238%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M120%20188v-44a26%2026%200%200%201%2026-26h44%22%2F%3E%3Cpath%20d%3D%22M392%20188v-44a26%2026%200%200%200-26-26h-44%22%2F%3E%3Cpath%20d%3D%22M120%20324v44a26%2026%200%200%200%2026%2026h44%22%2F%3E%3Cpath%20d%3D%22M392%20324v44a26%2026%200%200%201-26%2026h-44%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate(45%20256%20256)%22%3E%3Cpath%20d%3D%22M256%20348C198%20318%20186%20214%20256%20160C326%20214%20314%20318%20256%20348Z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
